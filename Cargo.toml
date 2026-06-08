@@ -1,11 +1,11 @@
 [package]
-name = "orasys-desk"
+name = "rustdesk"
 version = "1.4.7"
 authors = ["rustdesk <info@rustdesk.com>"]
 edition = "2021"
 build= "build.rs"
 description = "Votre bureau, où que vous soyez"
-default-run = "orasys-desk"
+default-run = "rustdesk"
 rust-version = "1.75"
 
 [lib]
