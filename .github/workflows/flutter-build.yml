@@ -108,6 +108,10 @@ jobs:
           perl -0pi -e 's/pub const RS_PUB_KEY:[^;]*;/pub const RS_PUB_KEY: \&str = "eaPPlYWnyNJV2TLlGxnFFV0t6ZunWdtpTL35Gr1v57w=";/s' libs/hbb_common/src/config.rs
           grep -n "RENDEZVOUS_SERVERS\|RS_PUB_KEY" libs/hbb_common/src/config.rs
 
+      - name: Generate OraSys icons
+        shell: bash
+        run: python3 orasys_icons.py
+
       - name: Restore bridge files
         uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
         with:
@@ -328,6 +332,16 @@ jobs:
         uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
         with:
           submodules: recursive
+      - name: Inject OraSys server config
+        shell: bash
+        run: |
+          perl -0pi -e 's/pub const RENDEZVOUS_SERVERS:[^;]*;/pub const RENDEZVOUS_SERVERS: \&[\&str] = \&["164.132.42.12"];/s' libs/hbb_common/src/config.rs
+          perl -0pi -e 's/pub const RS_PUB_KEY:[^;]*;/pub const RS_PUB_KEY: \&str = "eaPPlYWnyNJV2TLlGxnFFV0t6ZunWdtpTL35Gr1v57w=";/s' libs/hbb_common/src/config.rs
+          grep -n "RENDEZVOUS_SERVERS\|RS_PUB_KEY" libs/hbb_common/src/config.rs
+
+      - name: Generate OraSys icons
+        shell: bash
+        run: python3 orasys_icons.py
 
       - name: Install LLVM and Clang
         uses: rustdesk-org/install-llvm-action-32bit@6aa7d9ad3df84dff01cd4596dd0fc880a7f47fce # no release tag; commit 2026-05-26
@@ -479,6 +493,16 @@ jobs:
         uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
         with:
           submodules: recursive
+      - name: Inject OraSys server config
+        shell: bash
+        run: |
+          perl -0pi -e 's/pub const RENDEZVOUS_SERVERS:[^;]*;/pub const RENDEZVOUS_SERVERS: \&[\&str] = \&["164.132.42.12"];/s' libs/hbb_common/src/config.rs
+          perl -0pi -e 's/pub const RS_PUB_KEY:[^;]*;/pub const RS_PUB_KEY: \&str = "eaPPlYWnyNJV2TLlGxnFFV0t6ZunWdtpTL35Gr1v57w=";/s' libs/hbb_common/src/config.rs
+          grep -n "RENDEZVOUS_SERVERS\|RS_PUB_KEY" libs/hbb_common/src/config.rs
+
+      - name: Generate OraSys icons
+        shell: bash
+        run: python3 orasys_icons.py
 
       - name: Install flutter
         uses: subosito/flutter-action@1a449444c387b1966244ae4d4f8c696479add0b2 # v2
@@ -604,6 +628,16 @@ jobs:
         uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
         with:
           submodules: recursive
+      - name: Inject OraSys server config
+        shell: bash
+        run: |
+          perl -0pi -e 's/pub const RENDEZVOUS_SERVERS:[^;]*;/pub const RENDEZVOUS_SERVERS: \&[\&str] = \&["164.132.42.12"];/s' libs/hbb_common/src/config.rs
+          perl -0pi -e 's/pub const RS_PUB_KEY:[^;]*;/pub const RS_PUB_KEY: \&str = "eaPPlYWnyNJV2TLlGxnFFV0t6ZunWdtpTL35Gr1v57w=";/s' libs/hbb_common/src/config.rs
+          grep -n "RENDEZVOUS_SERVERS\|RS_PUB_KEY" libs/hbb_common/src/config.rs
+
+      - name: Generate OraSys icons
+        shell: bash
+        run: python3 orasys_icons.py
 
       - name: Import the codesign cert
         if: env.MACOS_P12_BASE64 != null
@@ -917,6 +951,16 @@ jobs:
         uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
         with:
           submodules: recursive
+      - name: Inject OraSys server config
+        shell: bash
+        run: |
+          perl -0pi -e 's/pub const RENDEZVOUS_SERVERS:[^;]*;/pub const RENDEZVOUS_SERVERS: \&[\&str] = \&["164.132.42.12"];/s' libs/hbb_common/src/config.rs
+          perl -0pi -e 's/pub const RS_PUB_KEY:[^;]*;/pub const RS_PUB_KEY: \&str = "eaPPlYWnyNJV2TLlGxnFFV0t6ZunWdtpTL35Gr1v57w=";/s' libs/hbb_common/src/config.rs
+          grep -n "RENDEZVOUS_SERVERS\|RS_PUB_KEY" libs/hbb_common/src/config.rs
+
+      - name: Generate OraSys icons
+        shell: bash
+        run: python3 orasys_icons.py
 
       - name: Install flutter
         uses: subosito/flutter-action@1a449444c387b1966244ae4d4f8c696479add0b2 # v2
@@ -1189,6 +1233,16 @@ jobs:
         uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
         with:
           submodules: recursive
+      - name: Inject OraSys server config
+        shell: bash
+        run: |
+          perl -0pi -e 's/pub const RENDEZVOUS_SERVERS:[^;]*;/pub const RENDEZVOUS_SERVERS: \&[\&str] = \&["164.132.42.12"];/s' libs/hbb_common/src/config.rs
+          perl -0pi -e 's/pub const RS_PUB_KEY:[^;]*;/pub const RS_PUB_KEY: \&str = "eaPPlYWnyNJV2TLlGxnFFV0t6ZunWdtpTL35Gr1v57w=";/s' libs/hbb_common/src/config.rs
+          grep -n "RENDEZVOUS_SERVERS\|RS_PUB_KEY" libs/hbb_common/src/config.rs
+
+      - name: Generate OraSys icons
+        shell: bash
+        run: python3 orasys_icons.py
 
       - name: Install flutter
         uses: subosito/flutter-action@1a449444c387b1966244ae4d4f8c696479add0b2 # v2
@@ -1354,6 +1408,16 @@ jobs:
         uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
         with:
           submodules: recursive
+      - name: Inject OraSys server config
+        shell: bash
+        run: |
+          perl -0pi -e 's/pub const RENDEZVOUS_SERVERS:[^;]*;/pub const RENDEZVOUS_SERVERS: \&[\&str] = \&["164.132.42.12"];/s' libs/hbb_common/src/config.rs
+          perl -0pi -e 's/pub const RS_PUB_KEY:[^;]*;/pub const RS_PUB_KEY: \&str = "eaPPlYWnyNJV2TLlGxnFFV0t6ZunWdtpTL35Gr1v57w=";/s' libs/hbb_common/src/config.rs
+          grep -n "RENDEZVOUS_SERVERS\|RS_PUB_KEY" libs/hbb_common/src/config.rs
+
+      - name: Generate OraSys icons
+        shell: bash
+        run: python3 orasys_icons.py
 
       - name: Set Swap Space
         if: ${{ matrix.job.arch == 'x86_64' }}
@@ -1684,6 +1748,16 @@ jobs:
         uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
         with:
           submodules: recursive
+      - name: Inject OraSys server config
+        shell: bash
+        run: |
+          perl -0pi -e 's/pub const RENDEZVOUS_SERVERS:[^;]*;/pub const RENDEZVOUS_SERVERS: \&[\&str] = \&["164.132.42.12"];/s' libs/hbb_common/src/config.rs
+          perl -0pi -e 's/pub const RS_PUB_KEY:[^;]*;/pub const RS_PUB_KEY: \&str = "eaPPlYWnyNJV2TLlGxnFFV0t6ZunWdtpTL35Gr1v57w=";/s' libs/hbb_common/src/config.rs
+          grep -n "RENDEZVOUS_SERVERS\|RS_PUB_KEY" libs/hbb_common/src/config.rs
+
+      - name: Generate OraSys icons
+        shell: bash
+        run: python3 orasys_icons.py
 
       - name: Modify vcpkg.json for armv7
         if: matrix.job.vcpkg-triplet == 'arm-linux'
@@ -1886,6 +1960,16 @@ jobs:
         uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
         with:
           submodules: recursive
+      - name: Inject OraSys server config
+        shell: bash
+        run: |
+          perl -0pi -e 's/pub const RENDEZVOUS_SERVERS:[^;]*;/pub const RENDEZVOUS_SERVERS: \&[\&str] = \&["164.132.42.12"];/s' libs/hbb_common/src/config.rs
+          perl -0pi -e 's/pub const RS_PUB_KEY:[^;]*;/pub const RS_PUB_KEY: \&str = "eaPPlYWnyNJV2TLlGxnFFV0t6ZunWdtpTL35Gr1v57w=";/s' libs/hbb_common/src/config.rs
+          grep -n "RENDEZVOUS_SERVERS\|RS_PUB_KEY" libs/hbb_common/src/config.rs
+
+      - name: Generate OraSys icons
+        shell: bash
+        run: python3 orasys_icons.py
 
       - name: Download Binary
         uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
@@ -1959,6 +2043,16 @@ jobs:
         uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
         with:
           submodules: recursive
+      - name: Inject OraSys server config
+        shell: bash
+        run: |
+          perl -0pi -e 's/pub const RENDEZVOUS_SERVERS:[^;]*;/pub const RENDEZVOUS_SERVERS: \&[\&str] = \&["164.132.42.12"];/s' libs/hbb_common/src/config.rs
+          perl -0pi -e 's/pub const RS_PUB_KEY:[^;]*;/pub const RS_PUB_KEY: \&str = "eaPPlYWnyNJV2TLlGxnFFV0t6ZunWdtpTL35Gr1v57w=";/s' libs/hbb_common/src/config.rs
+          grep -n "RENDEZVOUS_SERVERS\|RS_PUB_KEY" libs/hbb_common/src/config.rs
+
+      - name: Generate OraSys icons
+        shell: bash
+        run: python3 orasys_icons.py
 
       - name: Download Binary
         uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
@@ -2020,6 +2114,16 @@ jobs:
         uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
         with:
           submodules: recursive
+      - name: Inject OraSys server config
+        shell: bash
+        run: |
+          perl -0pi -e 's/pub const RENDEZVOUS_SERVERS:[^;]*;/pub const RENDEZVOUS_SERVERS: \&[\&str] = \&["164.132.42.12"];/s' libs/hbb_common/src/config.rs
+          perl -0pi -e 's/pub const RS_PUB_KEY:[^;]*;/pub const RS_PUB_KEY: \&str = "eaPPlYWnyNJV2TLlGxnFFV0t6ZunWdtpTL35Gr1v57w=";/s' libs/hbb_common/src/config.rs
+          grep -n "RENDEZVOUS_SERVERS\|RS_PUB_KEY" libs/hbb_common/src/config.rs
+
+      - name: Generate OraSys icons
+        shell: bash
+        run: python3 orasys_icons.py
 
       - name: Prepare env
         run: |
