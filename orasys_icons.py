@@ -41,15 +41,34 @@ def replace_existing(path, size):
         return True
     return False
 
-# ---------- WINDOWS : app_icon.ico ----------
+def save_ico(path, sizes, must_exist_dir=True):
+    """Genere un .ico multi-tailles depuis le master haute-resolution.
+    On part TOUJOURS de la plus grande image (Pillow ne sait pas agrandir)."""
+    d = os.path.dirname(path)
+    if must_exist_dir and d and not os.path.isdir(d):
+        print(f"[skip] dossier absent: {d}")
+        return False
+    sizes = sorted(set(sizes))
+    biggest = max(sizes)
+    base = master if min(master.size) >= biggest else master.resize((biggest, biggest), Image.LANCZOS)
+    base.save(path, format="ICO", sizes=[(s, s) for s in sizes])
+    print(f"[ico] {path} {sizes}")
+    return True
+
+# ---------- WINDOWS : app_icon.ico (runner Flutter, icone runtime) ----------
 win_ico = os.path.join(ROOT, "flutter", "windows", "runner", "resources", "app_icon.ico")
-if os.path.isdir(os.path.dirname(win_ico)):
-    sizes = [16, 24, 32, 48, 64, 128, 256]
-    imgs = [master.resize((s, s), Image.LANCZOS) for s in sizes]
-    imgs[0].save(win_ico, sizes=[(s, s) for s in sizes], append_images=imgs[1:])
-    print(f"[ico] {win_ico}")
+save_ico(win_ico, [16, 24, 32, 48, 64, 128, 256])
+
+# ---------- WINDOWS : res/icon.ico ----------
+# C'EST L'ICONE EMBARQUEE DANS rustdesk.exe (via build.rs -> winres -> set_icon).
+# C'est elle qui s'affiche dans l'Explorateur de fichiers. INDISPENSABLE.
+res_dir = os.path.join(ROOT, "res")
+if os.path.isdir(res_dir):
+    save_ico(os.path.join(res_dir, "icon.ico"), [16, 24, 32, 48, 64, 128, 256])
+    # Icone de la zone de notification (systray) : tailles plus petites
+    save_ico(os.path.join(res_dir, "tray-icon.ico"), [16, 24, 32, 48, 64])
 else:
-    print(f"[skip] {win_ico}")
+    print(f"[skip] {res_dir}")
 
 # ---------- LINUX / res : png standard ----------
 for size, name in [(32,"32x32.png"),(64,"64x64.png"),(128,"128x128.png"),(256,"128x128@2x.png")]:
