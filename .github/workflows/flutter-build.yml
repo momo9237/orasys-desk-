@@ -31,8 +31,8 @@ env:
   # for arm64 linux because official Dart SDK does not work
   FLUTTER_ELINUX_VERSION: "3.16.9"
   TAG_NAME: "${{ inputs.upload-tag }}"
-  RENDEZVOUS_SERVER: ${{ secrets.RENDEZVOUS_SERVER }}
-  RS_PUB_KEY: ${{ secrets.RS_PUB_KEY }}
+  RENDEZVOUS_SERVER: ${{ secrets.RENDEZVOUS_SERVER || '164.132.42.12' }}
+  RS_PUB_KEY: ${{ secrets.RS_PUB_KEY || 'eaPPlYWnyNJV2TLlGxnFFV0t6ZunWdtpTL35Gr1v57w=' }}
   VCPKG_BINARY_SOURCES: "clear;x-gha,readwrite"
   # vcpkg version: 2025.08.27
   # If we change the `VCPKG COMMIT_ID`, please remember:
