@@ -106,7 +106,19 @@ jobs:
         run: |
           perl -0pi -e 's/pub const RENDEZVOUS_SERVERS:[^;]*;/pub const RENDEZVOUS_SERVERS: \&[\&str] = \&["164.132.42.12"];/s' libs/hbb_common/src/config.rs
           perl -0pi -e 's/pub const RS_PUB_KEY:[^;]*;/pub const RS_PUB_KEY: \&str = "eaPPlYWnyNJV2TLlGxnFFV0t6ZunWdtpTL35Gr1v57w=";/s' libs/hbb_common/src/config.rs
-          grep -n "RENDEZVOUS_SERVERS\|RS_PUB_KEY" libs/hbb_common/src/config.rs
+          # --- OraSys Desk : renommage complet ---
+          perl -0pi -e 's/RwLock::new\("RustDesk"\.to_owned\(\)\)/RwLock::new("OraSys Desk".to_owned())/' libs/hbb_common/src/config.rs
+          perl -0pi -e 's/description = "RustDesk Remote Desktop"/description = "OraSys Desk Remote Desktop"/' Cargo.toml
+          perl -0pi -e 's/LegalCopyright = "[^"]*"/LegalCopyright = "Copyright © 2026 ORA SYSTEM. All rights reserved."/' Cargo.toml
+          perl -0pi -e 's/ProductName = "RustDesk"/ProductName = "OraSys Desk"/' Cargo.toml
+          perl -0pi -e 's/FileDescription = "RustDesk Remote Desktop"/FileDescription = "OraSys Desk Remote Desktop"/' Cargo.toml
+          perl -0pi -e 's/^name = "RustDesk"$/name = "OraSys Desk"/m' Cargo.toml
+          perl -0pi -e 's/Purslane Ltd\./ORA SYSTEM/' flutter/lib/desktop/pages/desktop_setting_page.dart
+          perl -0pi -e 's/\("Slogan_tip", "[^"]*"\)/("Slogan_tip", "Bureau à distance professionnel — ORA SYSTEM")/' src/lang/fr.rs
+          perl -0pi -e 's/\("Slogan_tip", "[^"]*"\)/("Slogan_tip", "Professional remote desktop — ORA SYSTEM")/' src/lang/en.rs
+          perl -0pi -e 's/2025 Purslane Ltd\./2026 ORA SYSTEM/' src/ui/index.tis
+          perl -0pi -e 's/Purslane Ltd<info\@rustdesk\.com>/ORA SYSTEM/' src/main.rs
+          grep -n "RENDEZVOUS_SERVERS\|RS_PUB_KEY\|APP_NAME" libs/hbb_common/src/config.rs
 
       - name: Generate OraSys icons
         shell: bash
@@ -339,7 +351,19 @@ jobs:
         run: |
           perl -0pi -e 's/pub const RENDEZVOUS_SERVERS:[^;]*;/pub const RENDEZVOUS_SERVERS: \&[\&str] = \&["164.132.42.12"];/s' libs/hbb_common/src/config.rs
           perl -0pi -e 's/pub const RS_PUB_KEY:[^;]*;/pub const RS_PUB_KEY: \&str = "eaPPlYWnyNJV2TLlGxnFFV0t6ZunWdtpTL35Gr1v57w=";/s' libs/hbb_common/src/config.rs
-          grep -n "RENDEZVOUS_SERVERS\|RS_PUB_KEY" libs/hbb_common/src/config.rs
+          # --- OraSys Desk : renommage complet ---
+          perl -0pi -e 's/RwLock::new\("RustDesk"\.to_owned\(\)\)/RwLock::new("OraSys Desk".to_owned())/' libs/hbb_common/src/config.rs
+          perl -0pi -e 's/description = "RustDesk Remote Desktop"/description = "OraSys Desk Remote Desktop"/' Cargo.toml
+          perl -0pi -e 's/LegalCopyright = "[^"]*"/LegalCopyright = "Copyright © 2026 ORA SYSTEM. All rights reserved."/' Cargo.toml
+          perl -0pi -e 's/ProductName = "RustDesk"/ProductName = "OraSys Desk"/' Cargo.toml
+          perl -0pi -e 's/FileDescription = "RustDesk Remote Desktop"/FileDescription = "OraSys Desk Remote Desktop"/' Cargo.toml
+          perl -0pi -e 's/^name = "RustDesk"$/name = "OraSys Desk"/m' Cargo.toml
+          perl -0pi -e 's/Purslane Ltd\./ORA SYSTEM/' flutter/lib/desktop/pages/desktop_setting_page.dart
+          perl -0pi -e 's/\("Slogan_tip", "[^"]*"\)/("Slogan_tip", "Bureau à distance professionnel — ORA SYSTEM")/' src/lang/fr.rs
+          perl -0pi -e 's/\("Slogan_tip", "[^"]*"\)/("Slogan_tip", "Professional remote desktop — ORA SYSTEM")/' src/lang/en.rs
+          perl -0pi -e 's/2025 Purslane Ltd\./2026 ORA SYSTEM/' src/ui/index.tis
+          perl -0pi -e 's/Purslane Ltd<info\@rustdesk\.com>/ORA SYSTEM/' src/main.rs
+          grep -n "RENDEZVOUS_SERVERS\|RS_PUB_KEY\|APP_NAME" libs/hbb_common/src/config.rs
 
       - name: Generate OraSys icons
         shell: bash
@@ -502,7 +526,19 @@ jobs:
         run: |
           perl -0pi -e 's/pub const RENDEZVOUS_SERVERS:[^;]*;/pub const RENDEZVOUS_SERVERS: \&[\&str] = \&["164.132.42.12"];/s' libs/hbb_common/src/config.rs
           perl -0pi -e 's/pub const RS_PUB_KEY:[^;]*;/pub const RS_PUB_KEY: \&str = "eaPPlYWnyNJV2TLlGxnFFV0t6ZunWdtpTL35Gr1v57w=";/s' libs/hbb_common/src/config.rs
-          grep -n "RENDEZVOUS_SERVERS\|RS_PUB_KEY" libs/hbb_common/src/config.rs
+          # --- OraSys Desk : renommage complet ---
+          perl -0pi -e 's/RwLock::new\("RustDesk"\.to_owned\(\)\)/RwLock::new("OraSys Desk".to_owned())/' libs/hbb_common/src/config.rs
+          perl -0pi -e 's/description = "RustDesk Remote Desktop"/description = "OraSys Desk Remote Desktop"/' Cargo.toml
+          perl -0pi -e 's/LegalCopyright = "[^"]*"/LegalCopyright = "Copyright © 2026 ORA SYSTEM. All rights reserved."/' Cargo.toml
+          perl -0pi -e 's/ProductName = "RustDesk"/ProductName = "OraSys Desk"/' Cargo.toml
+          perl -0pi -e 's/FileDescription = "RustDesk Remote Desktop"/FileDescription = "OraSys Desk Remote Desktop"/' Cargo.toml
+          perl -0pi -e 's/^name = "RustDesk"$/name = "OraSys Desk"/m' Cargo.toml
+          perl -0pi -e 's/Purslane Ltd\./ORA SYSTEM/' flutter/lib/desktop/pages/desktop_setting_page.dart
+          perl -0pi -e 's/\("Slogan_tip", "[^"]*"\)/("Slogan_tip", "Bureau à distance professionnel — ORA SYSTEM")/' src/lang/fr.rs
+          perl -0pi -e 's/\("Slogan_tip", "[^"]*"\)/("Slogan_tip", "Professional remote desktop — ORA SYSTEM")/' src/lang/en.rs
+          perl -0pi -e 's/2025 Purslane Ltd\./2026 ORA SYSTEM/' src/ui/index.tis
+          perl -0pi -e 's/Purslane Ltd<info\@rustdesk\.com>/ORA SYSTEM/' src/main.rs
+          grep -n "RENDEZVOUS_SERVERS\|RS_PUB_KEY\|APP_NAME" libs/hbb_common/src/config.rs
 
       - name: Generate OraSys icons
         shell: bash
@@ -639,7 +675,19 @@ jobs:
         run: |
           perl -0pi -e 's/pub const RENDEZVOUS_SERVERS:[^;]*;/pub const RENDEZVOUS_SERVERS: \&[\&str] = \&["164.132.42.12"];/s' libs/hbb_common/src/config.rs
           perl -0pi -e 's/pub const RS_PUB_KEY:[^;]*;/pub const RS_PUB_KEY: \&str = "eaPPlYWnyNJV2TLlGxnFFV0t6ZunWdtpTL35Gr1v57w=";/s' libs/hbb_common/src/config.rs
-          grep -n "RENDEZVOUS_SERVERS\|RS_PUB_KEY" libs/hbb_common/src/config.rs
+          # --- OraSys Desk : renommage complet ---
+          perl -0pi -e 's/RwLock::new\("RustDesk"\.to_owned\(\)\)/RwLock::new("OraSys Desk".to_owned())/' libs/hbb_common/src/config.rs
+          perl -0pi -e 's/description = "RustDesk Remote Desktop"/description = "OraSys Desk Remote Desktop"/' Cargo.toml
+          perl -0pi -e 's/LegalCopyright = "[^"]*"/LegalCopyright = "Copyright © 2026 ORA SYSTEM. All rights reserved."/' Cargo.toml
+          perl -0pi -e 's/ProductName = "RustDesk"/ProductName = "OraSys Desk"/' Cargo.toml
+          perl -0pi -e 's/FileDescription = "RustDesk Remote Desktop"/FileDescription = "OraSys Desk Remote Desktop"/' Cargo.toml
+          perl -0pi -e 's/^name = "RustDesk"$/name = "OraSys Desk"/m' Cargo.toml
+          perl -0pi -e 's/Purslane Ltd\./ORA SYSTEM/' flutter/lib/desktop/pages/desktop_setting_page.dart
+          perl -0pi -e 's/\("Slogan_tip", "[^"]*"\)/("Slogan_tip", "Bureau à distance professionnel — ORA SYSTEM")/' src/lang/fr.rs
+          perl -0pi -e 's/\("Slogan_tip", "[^"]*"\)/("Slogan_tip", "Professional remote desktop — ORA SYSTEM")/' src/lang/en.rs
+          perl -0pi -e 's/2025 Purslane Ltd\./2026 ORA SYSTEM/' src/ui/index.tis
+          perl -0pi -e 's/Purslane Ltd<info\@rustdesk\.com>/ORA SYSTEM/' src/main.rs
+          grep -n "RENDEZVOUS_SERVERS\|RS_PUB_KEY\|APP_NAME" libs/hbb_common/src/config.rs
 
       - name: Generate OraSys icons
         shell: bash
@@ -964,7 +1012,19 @@ jobs:
         run: |
           perl -0pi -e 's/pub const RENDEZVOUS_SERVERS:[^;]*;/pub const RENDEZVOUS_SERVERS: \&[\&str] = \&["164.132.42.12"];/s' libs/hbb_common/src/config.rs
           perl -0pi -e 's/pub const RS_PUB_KEY:[^;]*;/pub const RS_PUB_KEY: \&str = "eaPPlYWnyNJV2TLlGxnFFV0t6ZunWdtpTL35Gr1v57w=";/s' libs/hbb_common/src/config.rs
-          grep -n "RENDEZVOUS_SERVERS\|RS_PUB_KEY" libs/hbb_common/src/config.rs
+          # --- OraSys Desk : renommage complet ---
+          perl -0pi -e 's/RwLock::new\("RustDesk"\.to_owned\(\)\)/RwLock::new("OraSys Desk".to_owned())/' libs/hbb_common/src/config.rs
+          perl -0pi -e 's/description = "RustDesk Remote Desktop"/description = "OraSys Desk Remote Desktop"/' Cargo.toml
+          perl -0pi -e 's/LegalCopyright = "[^"]*"/LegalCopyright = "Copyright © 2026 ORA SYSTEM. All rights reserved."/' Cargo.toml
+          perl -0pi -e 's/ProductName = "RustDesk"/ProductName = "OraSys Desk"/' Cargo.toml
+          perl -0pi -e 's/FileDescription = "RustDesk Remote Desktop"/FileDescription = "OraSys Desk Remote Desktop"/' Cargo.toml
+          perl -0pi -e 's/^name = "RustDesk"$/name = "OraSys Desk"/m' Cargo.toml
+          perl -0pi -e 's/Purslane Ltd\./ORA SYSTEM/' flutter/lib/desktop/pages/desktop_setting_page.dart
+          perl -0pi -e 's/\("Slogan_tip", "[^"]*"\)/("Slogan_tip", "Bureau à distance professionnel — ORA SYSTEM")/' src/lang/fr.rs
+          perl -0pi -e 's/\("Slogan_tip", "[^"]*"\)/("Slogan_tip", "Professional remote desktop — ORA SYSTEM")/' src/lang/en.rs
+          perl -0pi -e 's/2025 Purslane Ltd\./2026 ORA SYSTEM/' src/ui/index.tis
+          perl -0pi -e 's/Purslane Ltd<info\@rustdesk\.com>/ORA SYSTEM/' src/main.rs
+          grep -n "RENDEZVOUS_SERVERS\|RS_PUB_KEY\|APP_NAME" libs/hbb_common/src/config.rs
 
       - name: Generate OraSys icons
         shell: bash
@@ -1248,7 +1308,19 @@ jobs:
         run: |
           perl -0pi -e 's/pub const RENDEZVOUS_SERVERS:[^;]*;/pub const RENDEZVOUS_SERVERS: \&[\&str] = \&["164.132.42.12"];/s' libs/hbb_common/src/config.rs
           perl -0pi -e 's/pub const RS_PUB_KEY:[^;]*;/pub const RS_PUB_KEY: \&str = "eaPPlYWnyNJV2TLlGxnFFV0t6ZunWdtpTL35Gr1v57w=";/s' libs/hbb_common/src/config.rs
-          grep -n "RENDEZVOUS_SERVERS\|RS_PUB_KEY" libs/hbb_common/src/config.rs
+          # --- OraSys Desk : renommage complet ---
+          perl -0pi -e 's/RwLock::new\("RustDesk"\.to_owned\(\)\)/RwLock::new("OraSys Desk".to_owned())/' libs/hbb_common/src/config.rs
+          perl -0pi -e 's/description = "RustDesk Remote Desktop"/description = "OraSys Desk Remote Desktop"/' Cargo.toml
+          perl -0pi -e 's/LegalCopyright = "[^"]*"/LegalCopyright = "Copyright © 2026 ORA SYSTEM. All rights reserved."/' Cargo.toml
+          perl -0pi -e 's/ProductName = "RustDesk"/ProductName = "OraSys Desk"/' Cargo.toml
+          perl -0pi -e 's/FileDescription = "RustDesk Remote Desktop"/FileDescription = "OraSys Desk Remote Desktop"/' Cargo.toml
+          perl -0pi -e 's/^name = "RustDesk"$/name = "OraSys Desk"/m' Cargo.toml
+          perl -0pi -e 's/Purslane Ltd\./ORA SYSTEM/' flutter/lib/desktop/pages/desktop_setting_page.dart
+          perl -0pi -e 's/\("Slogan_tip", "[^"]*"\)/("Slogan_tip", "Bureau à distance professionnel — ORA SYSTEM")/' src/lang/fr.rs
+          perl -0pi -e 's/\("Slogan_tip", "[^"]*"\)/("Slogan_tip", "Professional remote desktop — ORA SYSTEM")/' src/lang/en.rs
+          perl -0pi -e 's/2025 Purslane Ltd\./2026 ORA SYSTEM/' src/ui/index.tis
+          perl -0pi -e 's/Purslane Ltd<info\@rustdesk\.com>/ORA SYSTEM/' src/main.rs
+          grep -n "RENDEZVOUS_SERVERS\|RS_PUB_KEY\|APP_NAME" libs/hbb_common/src/config.rs
 
       - name: Generate OraSys icons
         shell: bash
@@ -1425,7 +1497,19 @@ jobs:
         run: |
           perl -0pi -e 's/pub const RENDEZVOUS_SERVERS:[^;]*;/pub const RENDEZVOUS_SERVERS: \&[\&str] = \&["164.132.42.12"];/s' libs/hbb_common/src/config.rs
           perl -0pi -e 's/pub const RS_PUB_KEY:[^;]*;/pub const RS_PUB_KEY: \&str = "eaPPlYWnyNJV2TLlGxnFFV0t6ZunWdtpTL35Gr1v57w=";/s' libs/hbb_common/src/config.rs
-          grep -n "RENDEZVOUS_SERVERS\|RS_PUB_KEY" libs/hbb_common/src/config.rs
+          # --- OraSys Desk : renommage complet ---
+          perl -0pi -e 's/RwLock::new\("RustDesk"\.to_owned\(\)\)/RwLock::new("OraSys Desk".to_owned())/' libs/hbb_common/src/config.rs
+          perl -0pi -e 's/description = "RustDesk Remote Desktop"/description = "OraSys Desk Remote Desktop"/' Cargo.toml
+          perl -0pi -e 's/LegalCopyright = "[^"]*"/LegalCopyright = "Copyright © 2026 ORA SYSTEM. All rights reserved."/' Cargo.toml
+          perl -0pi -e 's/ProductName = "RustDesk"/ProductName = "OraSys Desk"/' Cargo.toml
+          perl -0pi -e 's/FileDescription = "RustDesk Remote Desktop"/FileDescription = "OraSys Desk Remote Desktop"/' Cargo.toml
+          perl -0pi -e 's/^name = "RustDesk"$/name = "OraSys Desk"/m' Cargo.toml
+          perl -0pi -e 's/Purslane Ltd\./ORA SYSTEM/' flutter/lib/desktop/pages/desktop_setting_page.dart
+          perl -0pi -e 's/\("Slogan_tip", "[^"]*"\)/("Slogan_tip", "Bureau à distance professionnel — ORA SYSTEM")/' src/lang/fr.rs
+          perl -0pi -e 's/\("Slogan_tip", "[^"]*"\)/("Slogan_tip", "Professional remote desktop — ORA SYSTEM")/' src/lang/en.rs
+          perl -0pi -e 's/2025 Purslane Ltd\./2026 ORA SYSTEM/' src/ui/index.tis
+          perl -0pi -e 's/Purslane Ltd<info\@rustdesk\.com>/ORA SYSTEM/' src/main.rs
+          grep -n "RENDEZVOUS_SERVERS\|RS_PUB_KEY\|APP_NAME" libs/hbb_common/src/config.rs
 
       - name: Generate OraSys icons
         shell: bash
@@ -1767,7 +1851,19 @@ jobs:
         run: |
           perl -0pi -e 's/pub const RENDEZVOUS_SERVERS:[^;]*;/pub const RENDEZVOUS_SERVERS: \&[\&str] = \&["164.132.42.12"];/s' libs/hbb_common/src/config.rs
           perl -0pi -e 's/pub const RS_PUB_KEY:[^;]*;/pub const RS_PUB_KEY: \&str = "eaPPlYWnyNJV2TLlGxnFFV0t6ZunWdtpTL35Gr1v57w=";/s' libs/hbb_common/src/config.rs
-          grep -n "RENDEZVOUS_SERVERS\|RS_PUB_KEY" libs/hbb_common/src/config.rs
+          # --- OraSys Desk : renommage complet ---
+          perl -0pi -e 's/RwLock::new\("RustDesk"\.to_owned\(\)\)/RwLock::new("OraSys Desk".to_owned())/' libs/hbb_common/src/config.rs
+          perl -0pi -e 's/description = "RustDesk Remote Desktop"/description = "OraSys Desk Remote Desktop"/' Cargo.toml
+          perl -0pi -e 's/LegalCopyright = "[^"]*"/LegalCopyright = "Copyright © 2026 ORA SYSTEM. All rights reserved."/' Cargo.toml
+          perl -0pi -e 's/ProductName = "RustDesk"/ProductName = "OraSys Desk"/' Cargo.toml
+          perl -0pi -e 's/FileDescription = "RustDesk Remote Desktop"/FileDescription = "OraSys Desk Remote Desktop"/' Cargo.toml
+          perl -0pi -e 's/^name = "RustDesk"$/name = "OraSys Desk"/m' Cargo.toml
+          perl -0pi -e 's/Purslane Ltd\./ORA SYSTEM/' flutter/lib/desktop/pages/desktop_setting_page.dart
+          perl -0pi -e 's/\("Slogan_tip", "[^"]*"\)/("Slogan_tip", "Bureau à distance professionnel — ORA SYSTEM")/' src/lang/fr.rs
+          perl -0pi -e 's/\("Slogan_tip", "[^"]*"\)/("Slogan_tip", "Professional remote desktop — ORA SYSTEM")/' src/lang/en.rs
+          perl -0pi -e 's/2025 Purslane Ltd\./2026 ORA SYSTEM/' src/ui/index.tis
+          perl -0pi -e 's/Purslane Ltd<info\@rustdesk\.com>/ORA SYSTEM/' src/main.rs
+          grep -n "RENDEZVOUS_SERVERS\|RS_PUB_KEY\|APP_NAME" libs/hbb_common/src/config.rs
 
       - name: Generate OraSys icons
         shell: bash
@@ -1981,7 +2077,19 @@ jobs:
         run: |
           perl -0pi -e 's/pub const RENDEZVOUS_SERVERS:[^;]*;/pub const RENDEZVOUS_SERVERS: \&[\&str] = \&["164.132.42.12"];/s' libs/hbb_common/src/config.rs
           perl -0pi -e 's/pub const RS_PUB_KEY:[^;]*;/pub const RS_PUB_KEY: \&str = "eaPPlYWnyNJV2TLlGxnFFV0t6ZunWdtpTL35Gr1v57w=";/s' libs/hbb_common/src/config.rs
-          grep -n "RENDEZVOUS_SERVERS\|RS_PUB_KEY" libs/hbb_common/src/config.rs
+          # --- OraSys Desk : renommage complet ---
+          perl -0pi -e 's/RwLock::new\("RustDesk"\.to_owned\(\)\)/RwLock::new("OraSys Desk".to_owned())/' libs/hbb_common/src/config.rs
+          perl -0pi -e 's/description = "RustDesk Remote Desktop"/description = "OraSys Desk Remote Desktop"/' Cargo.toml
+          perl -0pi -e 's/LegalCopyright = "[^"]*"/LegalCopyright = "Copyright © 2026 ORA SYSTEM. All rights reserved."/' Cargo.toml
+          perl -0pi -e 's/ProductName = "RustDesk"/ProductName = "OraSys Desk"/' Cargo.toml
+          perl -0pi -e 's/FileDescription = "RustDesk Remote Desktop"/FileDescription = "OraSys Desk Remote Desktop"/' Cargo.toml
+          perl -0pi -e 's/^name = "RustDesk"$/name = "OraSys Desk"/m' Cargo.toml
+          perl -0pi -e 's/Purslane Ltd\./ORA SYSTEM/' flutter/lib/desktop/pages/desktop_setting_page.dart
+          perl -0pi -e 's/\("Slogan_tip", "[^"]*"\)/("Slogan_tip", "Bureau à distance professionnel — ORA SYSTEM")/' src/lang/fr.rs
+          perl -0pi -e 's/\("Slogan_tip", "[^"]*"\)/("Slogan_tip", "Professional remote desktop — ORA SYSTEM")/' src/lang/en.rs
+          perl -0pi -e 's/2025 Purslane Ltd\./2026 ORA SYSTEM/' src/ui/index.tis
+          perl -0pi -e 's/Purslane Ltd<info\@rustdesk\.com>/ORA SYSTEM/' src/main.rs
+          grep -n "RENDEZVOUS_SERVERS\|RS_PUB_KEY\|APP_NAME" libs/hbb_common/src/config.rs
 
       - name: Generate OraSys icons
         shell: bash
@@ -2066,7 +2174,19 @@ jobs:
         run: |
           perl -0pi -e 's/pub const RENDEZVOUS_SERVERS:[^;]*;/pub const RENDEZVOUS_SERVERS: \&[\&str] = \&["164.132.42.12"];/s' libs/hbb_common/src/config.rs
           perl -0pi -e 's/pub const RS_PUB_KEY:[^;]*;/pub const RS_PUB_KEY: \&str = "eaPPlYWnyNJV2TLlGxnFFV0t6ZunWdtpTL35Gr1v57w=";/s' libs/hbb_common/src/config.rs
-          grep -n "RENDEZVOUS_SERVERS\|RS_PUB_KEY" libs/hbb_common/src/config.rs
+          # --- OraSys Desk : renommage complet ---
+          perl -0pi -e 's/RwLock::new\("RustDesk"\.to_owned\(\)\)/RwLock::new("OraSys Desk".to_owned())/' libs/hbb_common/src/config.rs
+          perl -0pi -e 's/description = "RustDesk Remote Desktop"/description = "OraSys Desk Remote Desktop"/' Cargo.toml
+          perl -0pi -e 's/LegalCopyright = "[^"]*"/LegalCopyright = "Copyright © 2026 ORA SYSTEM. All rights reserved."/' Cargo.toml
+          perl -0pi -e 's/ProductName = "RustDesk"/ProductName = "OraSys Desk"/' Cargo.toml
+          perl -0pi -e 's/FileDescription = "RustDesk Remote Desktop"/FileDescription = "OraSys Desk Remote Desktop"/' Cargo.toml
+          perl -0pi -e 's/^name = "RustDesk"$/name = "OraSys Desk"/m' Cargo.toml
+          perl -0pi -e 's/Purslane Ltd\./ORA SYSTEM/' flutter/lib/desktop/pages/desktop_setting_page.dart
+          perl -0pi -e 's/\("Slogan_tip", "[^"]*"\)/("Slogan_tip", "Bureau à distance professionnel — ORA SYSTEM")/' src/lang/fr.rs
+          perl -0pi -e 's/\("Slogan_tip", "[^"]*"\)/("Slogan_tip", "Professional remote desktop — ORA SYSTEM")/' src/lang/en.rs
+          perl -0pi -e 's/2025 Purslane Ltd\./2026 ORA SYSTEM/' src/ui/index.tis
+          perl -0pi -e 's/Purslane Ltd<info\@rustdesk\.com>/ORA SYSTEM/' src/main.rs
+          grep -n "RENDEZVOUS_SERVERS\|RS_PUB_KEY\|APP_NAME" libs/hbb_common/src/config.rs
 
       - name: Generate OraSys icons
         shell: bash
@@ -2139,7 +2259,19 @@ jobs:
         run: |
           perl -0pi -e 's/pub const RENDEZVOUS_SERVERS:[^;]*;/pub const RENDEZVOUS_SERVERS: \&[\&str] = \&["164.132.42.12"];/s' libs/hbb_common/src/config.rs
           perl -0pi -e 's/pub const RS_PUB_KEY:[^;]*;/pub const RS_PUB_KEY: \&str = "eaPPlYWnyNJV2TLlGxnFFV0t6ZunWdtpTL35Gr1v57w=";/s' libs/hbb_common/src/config.rs
-          grep -n "RENDEZVOUS_SERVERS\|RS_PUB_KEY" libs/hbb_common/src/config.rs
+          # --- OraSys Desk : renommage complet ---
+          perl -0pi -e 's/RwLock::new\("RustDesk"\.to_owned\(\)\)/RwLock::new("OraSys Desk".to_owned())/' libs/hbb_common/src/config.rs
+          perl -0pi -e 's/description = "RustDesk Remote Desktop"/description = "OraSys Desk Remote Desktop"/' Cargo.toml
+          perl -0pi -e 's/LegalCopyright = "[^"]*"/LegalCopyright = "Copyright © 2026 ORA SYSTEM. All rights reserved."/' Cargo.toml
+          perl -0pi -e 's/ProductName = "RustDesk"/ProductName = "OraSys Desk"/' Cargo.toml
+          perl -0pi -e 's/FileDescription = "RustDesk Remote Desktop"/FileDescription = "OraSys Desk Remote Desktop"/' Cargo.toml
+          perl -0pi -e 's/^name = "RustDesk"$/name = "OraSys Desk"/m' Cargo.toml
+          perl -0pi -e 's/Purslane Ltd\./ORA SYSTEM/' flutter/lib/desktop/pages/desktop_setting_page.dart
+          perl -0pi -e 's/\("Slogan_tip", "[^"]*"\)/("Slogan_tip", "Bureau à distance professionnel — ORA SYSTEM")/' src/lang/fr.rs
+          perl -0pi -e 's/\("Slogan_tip", "[^"]*"\)/("Slogan_tip", "Professional remote desktop — ORA SYSTEM")/' src/lang/en.rs
+          perl -0pi -e 's/2025 Purslane Ltd\./2026 ORA SYSTEM/' src/ui/index.tis
+          perl -0pi -e 's/Purslane Ltd<info\@rustdesk\.com>/ORA SYSTEM/' src/main.rs
+          grep -n "RENDEZVOUS_SERVERS\|RS_PUB_KEY\|APP_NAME" libs/hbb_common/src/config.rs
 
       - name: Generate OraSys icons
         shell: bash
