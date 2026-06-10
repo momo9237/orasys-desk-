@@ -80,6 +80,17 @@ for p in glob.glob(os.path.join(ROOT, "flutter", "assets", "*.png")):
     if os.path.basename(p).lower() in ("icon.png", "logo.png"):
         replace_existing(p, 512)
 
+# ---------- FLUTTER IN-APP : creer icon.png / logo.png ----------
+# loadIcon() essaie 'assets/icon.png' AVANT 'assets/icon.svg' (RustDesk d'origine).
+# Ces PNG n'existent pas par defaut -> on les CREE et ils prennent la priorite
+# sur le logo SVG RustDesk, sans toucher au code Dart.
+fa = os.path.join(ROOT, "flutter", "assets")
+if os.path.isdir(fa):
+    save_png(512, os.path.join(fa, "icon.png"))
+    save_png(512, os.path.join(fa, "logo.png"))
+else:
+    print(f"[skip] {fa}")
+
 # ---------- macOS : AppIcon.appiconset ----------
 mac_dir = os.path.join(ROOT, "flutter", "macos", "Runner", "Assets.xcassets", "AppIcon.appiconset")
 if os.path.isdir(mac_dir):
